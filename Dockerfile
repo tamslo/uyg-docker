@@ -1,17 +1,3 @@
-###############################################################################
-# For publishing                                                              #
-###############################################################################
-
-# Build with `docker build -t tamslo/aypg .`
-# To publish execute the following steps:
-# * Use `docker login`
-# * Tag the image with `docker tag tamslo/aypg:tagname`
-# * Push the image with `docker push tamslo/aypg:tagname`
-
-###############################################################################
-# Basic stuff                                                                 #
-###############################################################################
-
 FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
