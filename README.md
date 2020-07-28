@@ -12,9 +12,9 @@ We created a Docker image for the AYPG lecture so that everybody has the same ex
   ```
   Note that `$PATH_TO_YOUR_DATA` needs to be replaced with the absolute path to the data you want to analyze, e.g., `~/Documents/data` on Mac or Linux or `C:/Users/Tamara/Documents/data` on Windows.
 
-  For more information regarding the Docker command, please refer to [Docker Explanation](#docker-explanation).
+  For more information regarding the Docker command, please refer to the section [Docker Explanation](#docker-explanation).
 
-3. **Run analyses** inside the container as described [here](#run-analyzes)
+3. **Run analyses** inside the container as described [below](#run-analyzes)
 
 4. **Stop** the container:
 
@@ -23,7 +23,7 @@ We created a Docker image for the AYPG lecture so that everybody has the same ex
   To stop the interactive shell just type `exit`.
 
 
-For advanced usage see [Customizing](#customizing) and [Updating](#updating).
+For advanced usage see the sections [Customizing](#customizing) and [Updating](#updating).
 
 ## Run Analyses
 
@@ -52,7 +52,9 @@ If you think the tools you installed should be available for everybody, please e
 
 ## Updating
 
-<span style="color:red">TODO: Is local image automatically updated? How to update?</span>
+When pulling the `tamslo/aypg` image the first time, a local copy is created that is not automatically updated. To update your image in case of changes, run `docker pull tamslo/aypg`.
+
+To check whether there is a newer version, compare the digest of your local image, which you can get with `docker images --digests`, with the digest you see on [DockerHub](https://hub.docker.com/r/tamslo/aypg/tags).
 
 ## Docker Explanation
 
