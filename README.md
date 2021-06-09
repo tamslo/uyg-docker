@@ -1,6 +1,6 @@
 # Dockerfile for Genome Analysis
 
-We created a Docker image for the AYPG lecture so that everybody has the same execution environment and software versions.
+We created a Docker image for the UYG lecture so that everybody has the same execution environment and software versions.
 
 ## Setup
 
@@ -8,7 +8,7 @@ We created a Docker image for the AYPG lecture so that everybody has the same ex
 
 2. **Start** the container:
   ```
-  docker run -v $PATH_TO_YOUR_DATA:/home/aypg-user/data -p 8787:8787 -p 8888:8888 -it --rm tamslo/aypg
+  docker run -v $PATH_TO_YOUR_DATA:/home/uyg-user/data -p 8787:8787 -p 8888:8888 -it --rm tamslo/uyg
   ```
   Note that `$PATH_TO_YOUR_DATA` needs to be replaced with the absolute path to the data you want to analyze, e.g., `~/Documents/data` on Mac or Linux or `C:/Users/Tamara/Documents/data` on Windows.
 
@@ -18,7 +18,7 @@ We created a Docker image for the AYPG lecture so that everybody has the same ex
 
 4. **Stop** the container:
 
-  Before stopping, make sure that **all files and analysis results you want to preserve** should be saved in `/home/aypg-user/data`, which writes the data to your `PATH_TO_YOUR_DATA` outside the container on the host system.
+  Before stopping, make sure that **all files and analysis results you want to preserve** should be saved in `/home/uyg-user/data`, which writes the data to your `PATH_TO_YOUR_DATA` outside the container on the host system.
 
   To stop the interactive shell just type `exit`.
 
@@ -29,11 +29,11 @@ For advanced usage see the sections [Customizing](#customizing) and [Updating](#
 
 The `docker run` command above will start an interactive shell in which you can run tools like `plink` and `plink2`.
 
-Your home directory, in which the interactive shell starts, is `/home/aypg-user`. From there, the data you included with `-v` can be found in the `data` subdirectory. All changes you make in this directory will be mirrored in `PATH_TO_YOUR_DATA`.
+Your home directory, in which the interactive shell starts, is `/home/uyg-user`. From there, the data you included with `-v` can be found in the `data` subdirectory. All changes you make in this directory will be mirrored in `PATH_TO_YOUR_DATA`.
 
 ### RStudio
 
-You can start RStudio with `rstudio-server start` and access it from your browser at http://localhost:8787; sign in with username `aypg-user` and password `1234`.
+You can start RStudio with `rstudio-server start` and access it from your browser at http://localhost:8787; sign in with username `uyg-user` and password `1234`.
 
 ### Jupyter
 
@@ -46,24 +46,24 @@ We provide you with some basic tools, but if you feel like you need more you can
 To create an adapted version of the provided Docker container, omit the `--rm` flag when starting your container and adapt the container in the interactive shell (for exmaple, install other tools using `apt-get`).
 
 After exiting the container, get its `CONTAINER_ID` with `docker ps -a` and save the container state to a new image with `docker commit $CONTAINER_ID $IMAGE_NAME`.
-To start a container replace the image name `tamslo/aypg` in the command above with `$IMAGE_NAME`.
+To start a container replace the image name `tamslo/uyg` in the command above with `$IMAGE_NAME`.
 
-If you think the tools you installed should be available for everybody, please either contact Tamara (tamara.slosarek@hpi.de) or adapt the Dockerfile and create a pull request on [GitHub](https://github.com/tamslo/aypg-docker).
+If you think the tools you installed should be available for everybody, please either contact Tamara (tamara.slosarek@hpi.de) or adapt the Dockerfile and create a pull request on [GitHub](https://github.com/tamslo/uyg-docker).
 
 ## Updating
 
-When pulling the `tamslo/aypg` image the first time, a local copy is created that is not automatically updated. To update your image in case of changes, run `docker pull tamslo/aypg`.
+When pulling the `tamslo/uyg` image the first time, a local copy is created that is not automatically updated. To update your image in case of changes, run `docker pull tamslo/uyg`.
 
-To check whether there is a newer version, compare the digest of your local image, which you can get with `docker images --digests`, with the digest you see on [DockerHub](https://hub.docker.com/r/tamslo/aypg/tags).
+To check whether there is a newer version, compare the digest of your local image, which you can get with `docker images --digests`, with the digest you see on [DockerHub](https://hub.docker.com/r/tamslo/uyg/tags).
 
 ## Docker Explanation
 
 Explanation of the `docker run` command:
-* `-v <PATH_TO_YOUR_DATA>:/home/aypg-user/data` mounts the directory `<PATH_TO_YOUR_DATA>` as a volume, which means that you can read and write in it from the container; in the container it will appear as `/home/aypg-user/data`
+* `-v <PATH_TO_YOUR_DATA>:/home/uyg-user/data` mounts the directory `<PATH_TO_YOUR_DATA>` as a volume, which means that you can read and write in it from the container; in the container it will appear as `/home/uyg-user/data`
 * `-p 8787:8787` exposes the port `8787` of the container, on which RStudio runs, to `8787` of the host
 * `-it` starts an interactive shell
 * `--rm` deletes the container after you close it
-* `tamslo/aypg:latest` references the image on [DockerHub](https://hub.docker.com/r/tamslo/aypg)
+* `tamslo/uyg:latest` references the image on [DockerHub](https://hub.docker.com/r/tamslo/uyg)
 
 ## Troubleshooting
 
