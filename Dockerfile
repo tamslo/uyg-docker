@@ -65,9 +65,9 @@ RUN rm $R_DEB_FILE
 # Create user                                                                   #
 # ###############################################################################
 
-RUN useradd -ms /bin/bash aypg-user
-RUN echo "aypg-user:1234" | chpasswd
-WORKDIR /home/aypg-user
+RUN useradd -ms /bin/bash uyg-user
+RUN echo "uyg-user:1234" | chpasswd
+WORKDIR /home/uyg-user
 
 # ###############################################################################
 # Install python                                                                #
