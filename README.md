@@ -4,13 +4,13 @@ We created a Docker image for the UYG lecture so that everybody has the same exe
 
 ## Setup
 
-1. **Install Docker** (see [Docker documentation](https://docs.docker.com/get-docker/)).
+1. **Install Docker** (see [Docker documentation](https://docs.docker.com/get-docker/)). On Windows, the usage of Docker together with Windows Subsystem for Linux (WSL) 2 is recommended to increase performance (see [the Docker documentation](https://docs.docker.com/docker-for-windows/wsl/) or [this blog post](https://towardsdatascience.com/how-to-improve-docker-performance-with-wsl2-3a54402ab0f2)).
 
 2. **Start** the container:
    ```
    docker run -v $PATH_TO_YOUR_DATA:/home/uyg-user/data -p 8787:8787 -p 8888:8888 -it --rm tamslo/uyg
    ```
-   Note that `$PATH_TO_YOUR_DATA` needs to be replaced with the absolute path to the data you want to analyze on your host system, e.g., `~/Documents/data` on Mac or Linux or `C:/Users/Tamara/Documents/data` on Windows. The first time you run this command, the `tamslo/uyg` image is downloaded, this can take some time.
+   Note that `$PATH_TO_YOUR_DATA` needs to be replaced with the absolute path to the data you want to analyze on your host system, e.g., `~/Documents/data` on Mac or Linux (or WSL) or `C:\Users\Tamara\Documents\data` on (non-WSL) Windows. The first time you run this command, the `tamslo/uyg` image is downloaded, this can take some time.
   
    To stop the interactive shell just type `exit`. Before stopping, make sure that **all files and analysis results you want to preserve** should be saved in `/home/uyg-user/data`, which writes the data to your `PATH_TO_YOUR_DATA` outside the container on the host system.
 
