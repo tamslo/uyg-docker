@@ -63,6 +63,8 @@ Your home directory, in which the interactive shell starts, is `/home/uyg-user`.
 
 You can start RStudio with `rstudio-server start` and access it from your browser at http://localhost:8787; sign in with username `uyg-user` and password `1234`.
 
+_Note: If you are running this on a Mac book with M1 chip, RStudio will not work; please use an R Notebook in Jupyter for running analyses in R instead. If you are currently [testing your setup](#test-your-setup), skip this step._
+
 ### Jupyter
 
 You can start Jupyter with `jupyter notebook --ip 0.0.0.0 --no-browser --allow-root`. You can access it at http://localhost:8888; use the token in the URL you see in the shell when starting Jupyter for login. You can create Python and R Notebooks.
