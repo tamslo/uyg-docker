@@ -65,7 +65,7 @@ You can start RStudio with `rstudio-server start` and access it from your browse
 
 ### Jupyter
 
-You can start Jupyter with `jupyter notebook --ip 0.0.0.0 --no-browser --allow-root`. You can access it at http://localhost:8888; use the token in the URL you see in the shell when starting Jupyter for login.
+You can start Jupyter with `jupyter notebook --ip 0.0.0.0 --no-browser --allow-root`. You can access it at http://localhost:8888; use the token in the URL you see in the shell when starting Jupyter for login. You can create Python and R Notebooks.
 
 To stop the Jupyter server, type `CTRL+C` and confirm with `y`.
 

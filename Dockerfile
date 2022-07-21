@@ -80,4 +80,11 @@ RUN pip3 install --upgrade pip
 RUN pip3 install numpy
 RUN pip3 install pandas
 RUN pip3 install plotly
+
+# ###############################################################################
+# Install Jupyter (with Python and R)                                           #
+# ###############################################################################
+
 RUN pip3 install --upgrade ipython jupyter
+RUN Rscript -e 'install.packages("IRkernel")'
+RUN Rscript -e 'IRkernel::installspec()'
