@@ -4,7 +4,7 @@ We created a Docker image for the UYG lecture so that everybody has the same exe
 
 ## Setup
 
-1. **Install Docker** (see [Docker documentation](https://docs.docker.com/get-docker/)). On Windows, the usage of Docker together with Windows Subsystem for Linux (WSL) 2 is recommended to increase performance (see [the Docker documentation](https://docs.docker.com/docker-for-windows/wsl/) or [this blog post](https://towardsdatascience.com/how-to-improve-docker-performance-with-wsl2-3a54402ab0f2)).
+1. **Install Docker** (see [Docker documentation](https://docs.docker.com/get-docker/)).
 
 2. **Start** the container:
    ```
