@@ -31,8 +31,11 @@ The following tasks lead you through all basic functionalities of this Docker im
    ```
    plink --version    # PLINK v1.90p 64-bit (16 Jun 2020)
    plink2 --version   # PLINK v2.00a2.3LM 64-bit Intel (24 Jan 2020)
-   python3 --version  # Python 3.8.5 (Note: only python3 installed, using python as a command will not work)
+   python3 --version  # Python 3.8.10
+   R --version        # R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
    ```
+
+   _Note: Only 'python3' is installed, using 'python' as a command will not work._
 
 3. Create a file in or copy a file to `$PATH_TO_YOUR_DATA` on your host system (e.g., with Finder on Mac or Windows Explorer). List the contents of the shared directory in the container with `ls /home/uyg-user/data`.
    

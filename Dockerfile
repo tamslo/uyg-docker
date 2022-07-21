@@ -53,7 +53,7 @@ ENV PATH="$PATH:$INSTALLATION_DIRECTORY"
 # ###############################################################################
 
 ENV R_VERSION 3.6.3-2
-ENV RSTUDIO_SERVER_VERSION 1.3.959
+ENV RSTUDIO_SERVER_VERSION 2022.07.0-548
 RUN apt-get install -y r-base=$R_VERSION
 RUN apt-get install -y gdebi-core
 ENV R_DEB_FILE rstudio-server-$RSTUDIO_SERVER_VERSION-amd64.deb
@@ -74,7 +74,7 @@ WORKDIR /home/uyg-user
 # ###############################################################################
 
 RUN apt-get update
-RUN apt-get install -y python3
+RUN apt-get install -y python3.8
 RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install numpy
