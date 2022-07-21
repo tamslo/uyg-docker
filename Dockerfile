@@ -49,17 +49,19 @@ RUN rm plink2_linux_x86_64.zip
 ENV PATH="$PATH:$INSTALLATION_DIRECTORY"
 
 # ###############################################################################
-# Install R and RStudio                                                         #
+# Install R, RStudio, and packages for exercises                                #
 # ###############################################################################
 
 ENV R_VERSION 3.6.3-2
 ENV RSTUDIO_SERVER_VERSION 2022.07.0-548
+ENV R_PACKAGES "'data.table','dplyr','tidyverse','ggplot2','gridExtra','ggrepel','GGally','caret','R.utils','stringr'"
 RUN apt-get install -y r-base=$R_VERSION
 RUN apt-get install -y gdebi-core
 ENV R_DEB_FILE rstudio-server-$RSTUDIO_SERVER_VERSION-amd64.deb
 RUN wget https://download2.rstudio.org/server/bionic/amd64/$R_DEB_FILE
 RUN gdebi --n $R_DEB_FILE
 RUN rm $R_DEB_FILE
+RUN Rscript -e "install.packages(c($R_PACKAGES))"
 
 # ###############################################################################
 # Create user                                                                   #
@@ -70,7 +72,7 @@ RUN echo "uyg-user:1234" | chpasswd
 WORKDIR /home/uyg-user
 
 # ###############################################################################
-# Install python                                                                #
+# Install python and packages                                                   #
 # ###############################################################################
 
 RUN apt-get update
